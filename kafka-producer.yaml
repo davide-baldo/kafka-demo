@@ -27,7 +27,7 @@ spec:
     env:
     - name: ROLE
       value: producer
-    - name: BOOTSTRAP_SERVER
+    - name: BOOTSTRAP_SERVER_LISTENER
       value: 127.0.0.1:9092
     - name: OUTLET_HOST
       value: kafka-outlet

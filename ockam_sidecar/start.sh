@@ -26,8 +26,8 @@ sleep 2
 ockam node list
 
 if [ "${ROLE}" == "outlet" ]; then
-  ockam kafka-outlet create -v --node sidecar --bootstrap-server kafka:9092
+  ockam kafka-outlet create -v --node sidecar --bootstrap-server ${BOOTSTRAP_SERVER}
 else
-  ockam kafka-${ROLE} create -v --node sidecar --bootstrap-server ${BOOTSTRAP_SERVER} --project-route /dnsaddr/${OUTLET_HOST}/tcp/${OUTLET_PORT}/secure/api
+  ockam kafka-${ROLE} create -v --node sidecar --bootstrap-server ${BOOTSTRAP_SERVER_LISTENER} --project-route /dnsaddr/${OUTLET_HOST}/tcp/${OUTLET_PORT}/secure/api
 fi
 fg %1
